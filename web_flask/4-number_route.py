@@ -31,8 +31,8 @@ def python(text):
     return 'Python {}'.format(text.replace("_", " "))
 
 
-@app.route('/number/int:<n>')
-def python(n):
+@app.route('/number/<int:n>')
+def intys(n):
     if isinstance(n, int):
         return '{} is a number'.format(n)
 
