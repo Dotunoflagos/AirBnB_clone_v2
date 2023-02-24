@@ -36,10 +36,12 @@ def intys(n):
     if isinstance(n, int):
         return '{} is a number'.format(n)
 
+
 @app.route('/number_template/<int:n>')
 def displ(n):
     if isinstance(n, int):
         return render_template('5-number.html', n=n)
+
 
 if __name__ == "__main__":
     """
