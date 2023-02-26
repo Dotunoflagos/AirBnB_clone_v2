@@ -52,7 +52,8 @@ def oddevn(n):
 
 @app.route('/states_list')
 def statelst():
-    return render_template('7-states_list.html', states=storage.all('State').values())
+    return render_template('7-states_list.html', states=storage.all('State')
+                           .values())
 
 
 @app.teardown_appcontext
