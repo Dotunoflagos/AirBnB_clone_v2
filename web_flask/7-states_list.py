@@ -49,13 +49,16 @@ def oddevn(n):
     if isinstance(n, int):
         return render_template('6-number_odd_or_even.html', n=n)
 
+
 @app.route('/states_list')
 def statelst():
     return render_template('7-states_list.html', states=storage.all('State').values())
 
+
 @app.teardown_appcontext
 def tear(exception):
     storage.close()
+
 
 if __name__ == "__main__":
     """
