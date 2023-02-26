@@ -5,7 +5,7 @@
   </head>
   <body>
     {% if (states or idd ) %}
-        <h1>State{% if idd %}: {{ idd.name }}{% endif %}</h1>
+        <h1>State{% if idd %}: {{ idd.name }}{% else %}s{% endif %}</h1>
         {% if idd %}<H3>Cities:</H3>{% endif %}
         <ul>
         
