@@ -62,18 +62,21 @@ def ct_statelst():
     return render_template('8-cities_by_states.html',
                            states=storage.all('State').values())
 
+
 @app.route('/states')
 def states():
     return render_template('9-states.html',
                            states=storage.all('State').values())
 
+
 @app.route('/states/<id>')
 def statesid(id):
     if id:
         return render_template('9-states.html',
-                            idd=storage.get(State, id))
+                               idd=storage.get(State, id))
     else:
         return render_template('9-states.html')
+
 
 @app.teardown_appcontext
 def tear(exception):
