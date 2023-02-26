@@ -21,7 +21,7 @@
         
         </ul>
     {% else %}
-        <h1>Not found!</h1>
+        <h1>{% if states == {} %}States{% else %}Not found!{% endif %}</h1>
     {% endif %}
   </body>
 </html>

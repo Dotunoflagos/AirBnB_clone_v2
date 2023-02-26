@@ -65,12 +65,18 @@ def ct_statelst():
 
 @app.route('/states')
 def states():
+    val1 = storage.all('State')
+    if val1 == {}:
+        val = {}
+    else:
+        val = val1.values()
     return render_template('9-states.html',
-                           states=storage.all('State').values())
+                           states=val)
 
 
 @app.route('/states/<id>')
 def statesid(id):
+    print("here")
     if id:
         return render_template('9-states.html',
                                idd=storage.get(State, id))
